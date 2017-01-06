@@ -1,19 +1,29 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-  Github:
-    url: https://github.com/klugjo/hexo-theme-clean-blog
-    icon: github
+  Strona Główna:
+    url: /
+    name: main
+  Kościół:
+    url: /kosciol
+    name: kosciol
+  Zabawa: 
+    url: /zabawa
+    name: zabawa
+  Noclegi:
+    url: /noclegi
+    name: noclegi
+  Kontakt:
+    url: /kontakt
+    name: kontakt
 
 # Title on top left of menu. Leave empty to use main blog title
-menu_title: Configurable Title
+menu_title: sobczak-party.pl
 
 # URL of the Home page image
-index_cover: http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg
+index_cover: /img/home-bg.jpg
 
 # Default post title
-default_post_title: Untitled
+default_post_title: Bez tytułu
 
 # Comments. Choose one by filling up the information
 comments:

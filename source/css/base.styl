@@ -1,10 +1,47 @@
 @import "variables.styl"
 @import "mixins.styl"
 
+html
+  background url("/img/flowers_bg.png") no-repeat center center
+  background-size cover
+  min-height 100%
+  width 100%
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+
 body
-  @extend .serif
+  @extend .sans-serif
+  background rgba(255, 255, 255, 0.5)
   font-size 20px
   color gray-dark
+  margin 5px
+  padding 10px
+  
+  @media only screen and (min-width: 450px) {
+    margin 10px 10%
+    padding 15px
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin 20px 15%
+    padding 35px
+  }
+
+#main-conter {
+  background rgba(255, 255, 255, 0.8)
+  position relative
+}
+
+.container {
+  width auto
+}
 
 p
   line-height 1.5
@@ -33,37 +70,48 @@ hr.small
   border-color white
 
 .navbar-custom
-  position absolute
-  top 0
-  left 0
+  position static
   width 100%
-  z-index 3
+  background-color transparent
+  margin-bottom 0;
+  border none
   @extend .sans-serif
+  .navbar-collapse {
+    border none
+  }
+
   .navbar-brand
     font-weight 800
   .nav
     li
+      &.active
+        a
+          background-color warning
+          color white
       a
         text-transform uppercase
-        font-size 12px
-        font-weight 800
+        font-size 14px
+        font-weight 500
         letter-spacing 1px
         text-decoration none
   @media only screen and (min-width: 768px)
     background transparent
     border-bottom 1px solid transparent
     .navbar-brand
-      color white
+      color gray
       padding 20px
       &:hover, &:focus
-        color white-faded
+        color gray-dark
     .nav
+      margin-top: 10px !important;
       li
         a
-          color white
-          padding 20px
+          color gray
+          padding 5px 10px
+          font-size 16px
+          font-weight 600
           &:hover, &:focus
-            color white-faded
+            color gray-dark
   @media only screen and (min-width: 1170px)
     -webkit-transition background-color 0.3s
     -moz-transition background-color 0.3s
@@ -104,24 +152,54 @@ hr.small
       transform translate3d(0, 100%, 0)
 
 .intro-header
-  background-color gray
-  background-position center center
   background-attachment scroll
+  background-position center center
   @extend .background-cover
-  margin-bottom 50px
+  .post-heading h1 {
+    text-shadow: 0px 0px 5px #000;
+  }
   .site-heading, .post-heading, .page-heading
-    padding 100px 0 50px
-    color white
+    padding 200px 0 50px
+    color gray
     @media only screen and (min-width: 768px)
       padding 150px 0
+    
+    &.site-heading
+      padding-top 100px
+      @media only screen and (max-width: 768px)
+        padding-top 50px  
     &.archives
       color brand-primary
       margin-top 60px
   .site-heading, .page-heading
     text-align center
+
+    & > h1 {
+      font-weight 300
+      
+      small {
+        display block
+      }
+    }
+
+    & > p {
+      margin-bottom 110px
+      font-size: 1.5em;
+      line-height: 1;
+    }
+
     h1
+      @extend .serif
       margin-top 0
-      font-size 50px
+      font-size 60px
+      & > span {
+        @extend .sans-serif
+        font-size 20px
+        font-weight 300
+        margin-top 45px
+        margin-bottom -50px
+        display block
+      }
     .subheading
       font-size 24px
       line-height 1.1
@@ -220,14 +298,20 @@ hr.small
 .archive-before-pagination
   height 30px
 footer
-  padding 50px 0 65px
-  .list-inline
-    margin 0
-    padding 0
-  .copyright
-    font-size 14px
-    text-align center
-    margin-bottom 0
+  padding 15px
+  letter-spacing 2px
+
+  & > p.lead {
+    font-size 25px
+    
+    strong {
+      font-size: 1.3em
+    }
+  }
+
+  a {
+    text-decoration none
+  }
 
 .floating-label-form-group
   font-size 14px
@@ -294,7 +378,7 @@ form .row:first-child .floating-label-form-group
   &:hover, &:focus
     background-color brand-primary
     border 1px solid brand-primary
-    color white
+    color gray
 
 .pager
   margin 20px 0 0
@@ -309,7 +393,7 @@ form .row:first-child .floating-label-form-group
       background-color white
       border-radius 0
     > a:hover, > a:focus
-      color white
+      color gray
       background-color brand-primary
       border 1px solid brand-primary
   .disabled
@@ -319,21 +403,21 @@ form .row:first-child .floating-label-form-group
       cursor not-allowed
 
 ::-moz-selection
-  color white
+  color gray
   text-shadow none
   background brand-primary
 
 ::selection
-  color white
+  color gray
   text-shadow none
   background brand-primary
 
 img::selection
-  color white
+  color gray
   background transparent
 
 img::-moz-selection
-  color white
+  color gray
   background transparent
 
 body

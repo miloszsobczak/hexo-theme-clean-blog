@@ -14,7 +14,9 @@
         <% if(item.author) { %>
             Posted by <%- item.author %> on
         <% } %>
-        <%= item.date.format(config.date_format) %>
+        <% if(item.date) { %>
+            <%= item.date.format(config.date_format) %>
+        <% } %>
     </p>
 </div>
 <hr>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 
 <body>
+    <div id="main-conter">
+        <!-- Menu -->
+        <%- partial('_partial/menu') %>
 
-    <!-- Menu -->
-    <%- partial('_partial/menu') %>
+        <!-- Main Content -->
+        <%- body %>
 
-    <!-- Main Content -->
-    <%- body %>
+        <!-- Footer -->
+        <%- partial('_partial/footer') %>
 
-    <!-- Footer -->
-    <%- partial('_partial/footer') %>
-
-    <!-- After footer scripts -->
-    <%- partial('_partial/after-footer') %>
-
+        <!-- After footer scripts -->
+        <%- partial('_partial/after-footer') %>
+    </div>
 </body>
 
 </html>
